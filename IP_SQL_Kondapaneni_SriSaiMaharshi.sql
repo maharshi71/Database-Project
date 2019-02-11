@@ -251,3 +251,11 @@ AS
         insert into technicalstaff values('@ename','@deg','@pos');
     END
 GO
+
+create or replace PROCEDURE query16( T_NAME IN VARCHAR,
+Q_NAME IN VARCHAR)
+AS
+BEGIN
+UPDATE T_STAFF SET T_NAME = Q_NAME where t_name=T_NAME; UPDATE COMPREASON_RELATION SET T_NAME = Q_NAME where t_name = T_NAME;
+UPDATE PRODUCT SET T_NAME = Q_NAME where t_name = T_NAME; UPDATE T_OCCURS SET T_NAME = Q_NAME where t_name = T_NAME;
+END SWAP_VALUES;
